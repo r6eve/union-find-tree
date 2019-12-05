@@ -1,16 +1,16 @@
 (ns union-find-tree.core
   (:refer-clojure :exclude [find]))
 
-(defrecord UnionFind [parent rank])
+(defrecord UnionFind [^long parent ^long rank])
 
 (defn make
   [n]
   (into-array (map #(->UnionFind % 0) (range n))))
 
 (defn find
-  [s x]
+  [^"[Lunion_find_tree.core.UnionFind;" s x]
   (letfn [(doit [x]
-            (let [sx (aget s x)]
+            (let [^UnionFind sx (aget s x)]
               (if (= x (.parent sx))
                 x
                 (let [p (doit (.parent sx))]
@@ -19,11 +19,11 @@
     (doit x)))
 
 (defn union!
-  [s x y]
+  [^"[Lunion_find_tree.core.UnionFind;" s x y]
   (let [px (find s x)
         py (find s y)
-        spx (aget s px)
-        spy (aget s py)]
+        ^UnionFind spx (aget s px)
+        ^UnionFind spy (aget s py)]
     (if (< (.rank spx) (.rank spy))
       (aset s px (->UnionFind py (.rank spx)))
       (do

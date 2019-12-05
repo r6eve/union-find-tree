@@ -5,9 +5,8 @@
             :url "https://www.boost.org/users/license.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]]
   :profiles {; OPTIMIZE: Keep it generalized.
-             ; :dev {:global-vars {*warn-on-reflection* true
-             ;                     ; *unchecked-math* :warn-on-boxed
-             ;                     }}
+             :dev {:global-vars {*warn-on-reflection* true
+                                 *unchecked-math* :warn-on-boxed}}
              :bench {:dependencies [[criterium "0.4.5"]]
                      :plugins [[lein-exec "0.3.7"]]}
              :coverage {:plugins [[lein-cloverage "1.1.1"]]}
