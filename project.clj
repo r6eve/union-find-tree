@@ -1,4 +1,4 @@
-(defproject union-find-tree "0.1.0"
+(defproject union-find-tree "0.1.1-SNAPSHOT"
   :description "Library designed to manipulate union-find tree."
   :url "https://github.com/r6eve/union-find-tree"
   :license {:name "Boost Software License - Version 1.0"
